@@ -1,0 +1,218 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+*/
+(header "symbol" (version "1.2"))
+(symbol
+	(rect 16 16 368 336)
+	(text "HARDSPLOIT_TEMPLATE" (rect 5 0 232 18)(font "Arial" (font_size 8)))
+	(text "inst" (rect 8 300 33 316)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "CLK_50M" (rect 0 0 84 18)(font "Arial" (font_size 8)))
+		(text "CLK_50M" (rect 21 27 105 45)(font "Arial" (font_size 8)))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "SPI3_NSS" (rect 0 0 89 18)(font "Arial" (font_size 8)))
+		(text "SPI3_NSS" (rect 21 43 110 61)(font "Arial" (font_size 8)))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "SPI3_SCLK" (rect 0 0 101 18)(font "Arial" (font_size 8)))
+		(text "SPI3_SCLK" (rect 21 59 122 77)(font "Arial" (font_size 8)))
+		(line (pt 0 64)(pt 16 64))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "SPI3_MOSI" (rect 0 0 96 18)(font "Arial" (font_size 8)))
+		(text "SPI3_MOSI" (rect 21 75 117 93)(font "Arial" (font_size 8)))
+		(line (pt 0 80)(pt 16 80))
+	)
+	(port
+		(pt 0 96)
+		(input)
+		(text "fifo_in_read_enable" (rect 0 0 164 18)(font "Arial" (font_size 8)))
+		(text "fifo_in_read_enable" (rect 21 91 185 109)(font "Arial" (font_size 8)))
+		(line (pt 0 96)(pt 16 96))
+	)
+	(port
+		(pt 0 112)
+		(input)
+		(text "fifo_out_data[7..0]" (rect 0 0 147 18)(font "Arial" (font_size 8)))
+		(text "fifo_out_data[7..0]" (rect 21 107 168 125)(font "Arial" (font_size 8)))
+		(line (pt 0 112)(pt 16 112)(line_width 3))
+	)
+	(port
+		(pt 0 128)
+		(input)
+		(text "fifo_out_write_enable" (rect 0 0 175 18)(font "Arial" (font_size 8)))
+		(text "fifo_out_write_enable" (rect 21 123 196 141)(font "Arial" (font_size 8)))
+		(line (pt 0 128)(pt 16 128))
+	)
+	(port
+		(pt 0 144)
+		(input)
+		(text "SPI1_MISO" (rect 0 0 96 18)(font "Arial" (font_size 8)))
+		(text "SPI1_MISO" (rect 21 139 117 157)(font "Arial" (font_size 8)))
+		(line (pt 0 144)(pt 16 144))
+	)
+	(port
+		(pt 0 160)
+		(input)
+		(text "fifo_out_process" (rect 0 0 136 18)(font "Arial" (font_size 8)))
+		(text "fifo_out_process" (rect 21 155 157 173)(font "Arial" (font_size 8)))
+		(line (pt 0 160)(pt 16 160))
+	)
+	(port
+		(pt 0 176)
+		(input)
+		(text "fifo_out_clear" (rect 0 0 110 18)(font "Arial" (font_size 8)))
+		(text "fifo_out_clear" (rect 21 171 131 189)(font "Arial" (font_size 8)))
+		(line (pt 0 176)(pt 16 176))
+	)
+	(port
+		(pt 352 32)
+		(output)
+		(text "clk" (rect 0 0 22 18)(font "Arial" (font_size 8)))
+		(text "clk" (rect 309 27 331 45)(font "Arial" (font_size 8)))
+		(line (pt 352 32)(pt 336 32))
+	)
+	(port
+		(pt 352 48)
+		(output)
+		(text "reset_n" (rect 0 0 61 18)(font "Arial" (font_size 8)))
+		(text "reset_n" (rect 270 43 331 61)(font "Arial" (font_size 8)))
+		(line (pt 352 48)(pt 336 48))
+	)
+	(port
+		(pt 352 64)
+		(output)
+		(text "DS" (rect 0 0 27 18)(font "Arial" (font_size 8)))
+		(text "DS" (rect 304 59 331 77)(font "Arial" (font_size 8)))
+		(line (pt 352 64)(pt 336 64))
+	)
+	(port
+		(pt 352 80)
+		(output)
+		(text "MR" (rect 0 0 28 18)(font "Arial" (font_size 8)))
+		(text "MR" (rect 303 75 331 93)(font "Arial" (font_size 8)))
+		(line (pt 352 80)(pt 336 80))
+	)
+	(port
+		(pt 352 96)
+		(output)
+		(text "SHCP" (rect 0 0 53 18)(font "Arial" (font_size 8)))
+		(text "SHCP" (rect 278 91 331 109)(font "Arial" (font_size 8)))
+		(line (pt 352 96)(pt 336 96))
+	)
+	(port
+		(pt 352 112)
+		(output)
+		(text "STCP" (rect 0 0 50 18)(font "Arial" (font_size 8)))
+		(text "STCP" (rect 281 107 331 125)(font "Arial" (font_size 8)))
+		(line (pt 352 112)(pt 336 112))
+	)
+	(port
+		(pt 352 128)
+		(output)
+		(text "OE" (rect 0 0 27 18)(font "Arial" (font_size 8)))
+		(text "OE" (rect 304 123 331 141)(font "Arial" (font_size 8)))
+		(line (pt 352 128)(pt 336 128))
+	)
+	(port
+		(pt 352 144)
+		(output)
+		(text "SPI3_MISO" (rect 0 0 96 18)(font "Arial" (font_size 8)))
+		(text "SPI3_MISO" (rect 235 139 331 157)(font "Arial" (font_size 8)))
+		(line (pt 352 144)(pt 336 144))
+	)
+	(port
+		(pt 352 160)
+		(output)
+		(text "fifo_in_process" (rect 0 0 126 18)(font "Arial" (font_size 8)))
+		(text "fifo_in_process" (rect 205 155 331 173)(font "Arial" (font_size 8)))
+		(line (pt 352 160)(pt 336 160))
+	)
+	(port
+		(pt 352 176)
+		(output)
+		(text "fifo_in_q[7..0]" (rect 0 0 110 18)(font "Arial" (font_size 8)))
+		(text "fifo_in_q[7..0]" (rect 221 171 331 189)(font "Arial" (font_size 8)))
+		(line (pt 352 176)(pt 336 176)(line_width 3))
+	)
+	(port
+		(pt 352 192)
+		(output)
+		(text "fifo_in_full" (rect 0 0 81 18)(font "Arial" (font_size 8)))
+		(text "fifo_in_full" (rect 250 187 331 205)(font "Arial" (font_size 8)))
+		(line (pt 352 192)(pt 336 192))
+	)
+	(port
+		(pt 352 208)
+		(output)
+		(text "fifo_in_empty" (rect 0 0 109 18)(font "Arial" (font_size 8)))
+		(text "fifo_in_empty" (rect 222 203 331 221)(font "Arial" (font_size 8)))
+		(line (pt 352 208)(pt 336 208))
+	)
+	(port
+		(pt 352 224)
+		(output)
+		(text "SPI1_NSS" (rect 0 0 89 18)(font "Arial" (font_size 8)))
+		(text "SPI1_NSS" (rect 242 219 331 237)(font "Arial" (font_size 8)))
+		(line (pt 352 224)(pt 336 224))
+	)
+	(port
+		(pt 352 240)
+		(output)
+		(text "SPI1_SCLK" (rect 0 0 101 18)(font "Arial" (font_size 8)))
+		(text "SPI1_SCLK" (rect 230 235 331 253)(font "Arial" (font_size 8)))
+		(line (pt 352 240)(pt 336 240))
+	)
+	(port
+		(pt 352 256)
+		(output)
+		(text "fifo_out_full" (rect 0 0 92 18)(font "Arial" (font_size 8)))
+		(text "fifo_out_full" (rect 239 251 331 269)(font "Arial" (font_size 8)))
+		(line (pt 352 256)(pt 336 256))
+	)
+	(port
+		(pt 352 272)
+		(output)
+		(text "SPI1_MOSI" (rect 0 0 96 18)(font "Arial" (font_size 8)))
+		(text "SPI1_MOSI" (rect 235 267 331 285)(font "Arial" (font_size 8)))
+		(line (pt 352 272)(pt 336 272))
+	)
+	(port
+		(pt 352 288)
+		(output)
+		(text "fifo_out_empty" (rect 0 0 120 18)(font "Arial" (font_size 8)))
+		(text "fifo_out_empty" (rect 211 283 331 301)(font "Arial" (font_size 8)))
+		(line (pt 352 288)(pt 336 288))
+	)
+	(drawing
+		(rectangle (rect 16 16 336 304))
+	)
+)

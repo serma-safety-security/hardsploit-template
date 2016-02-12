@@ -1,0 +1,31 @@
+
+State Machine - |HARDSPLOIT_TEMPLATE|LED:LED|state
+Name state.processBit state.processFirstBit state.prepareFirstBit 
+state.prepareFirstBit 0 0 0 
+state.processFirstBit 0 1 1 
+state.processBit 1 0 1 
+
+State Machine - |HARDSPLOIT_TEMPLATE|state_machine_spi_command:state_machine_spi_slave|state
+Name state.wait_request_read_wait6 state.wait_request_read_wait5 state.wait_request_read_wait4 state.wait_request_read_wait3 state.wait_request_read_wait2 state.wait_request_read_wait1 state.finish_template_state state.wait_finish_template_state state.wait_request_read7 state.wait_request_read6 state.wait_request_read5 state.wait_request_read4 state.wait_request_read3 state.wait_request_read2 state.wait_request_read1 state.wait_request_read0 state.template_command_state state.led_execute state.led_prepare state.led_fetch state.select_command state.ready 
+state.ready 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+state.select_command 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+state.led_fetch 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+state.led_prepare 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+state.led_execute 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+state.template_command_state 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+state.wait_request_read0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+state.wait_request_read1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+state.wait_request_read2 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+state.wait_request_read3 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+state.wait_request_read4 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+state.wait_request_read5 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+state.wait_request_read6 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+state.wait_request_read7 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.wait_finish_template_state 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.finish_template_state 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.wait_request_read_wait1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.wait_request_read_wait2 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.wait_request_read_wait3 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.wait_request_read_wait4 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.wait_request_read_wait5 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.wait_request_read_wait6 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 

@@ -1,0 +1,193 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+ENTITY state_machine_spi_command IS
+ Generic (   
+        PREFETCH : positive := 1;
+		N : positive := 8);                                      -- prefetch lookahead cycles
+    Port (  
+  clk      : IN   STD_LOGIC;                     --system clock
+  reset_n  : IN   STD_LOGIC;                     --active low reset
+  n_spi_receive_data     : IN   STD_LOGIC;                     --0 when SPI reveive data 
+
+  data_in_request : in std_logic;                                       -- preload lookahead data request line
+  write_ack : in std_logic;                                       -- receive write acknowledge
+  
+  
+  data_in : in  std_logic_vector (7 downto 0)   ;                 -- parallel input (clocked out on falling clk_i)
+  data_in_valid : in std_logic;                                     -- do_o data valid strobe, valid during one clk_i rising edge.
+  fifo_full : in std_logic; --If full is assert
+ fifo_empty : in std_logic;--If empty is assert
+ 
+  fifo_usedw : in  std_logic_vector (11 downto 0);--Number of word in fifo
+ 
+ led_state : OUT  STD_LOGIC_VECTOR(63 DOWNTO 0); -- state of helping wiring led 
+ 
+
+--Fifo interface 
+ fifo_data_out : OUT  STD_LOGIC_VECTOR(7 DOWNTO 0); 
+ fifo_write_req : OUT std_logic;   
+
+ fifo_clear : OUT std_logic;  
+ 	--SPI SLAVE send data to uC 
+ data_out : out  std_logic_vector (7 downto 0) ;-- parallel load data out (clocked in on rising edge of clk_i)
+ write_enable : out std_logic ;                               -- user data write enable
+ 
+ start_process_data_in_fifo : OUT std_logic  -- Assert to start to process data in Fifo buffer because SPI transmision is finished
+ 
+ 
+ 
+
+   
+ ); 
+END state_machine_spi_command;
+
+ARCHITECTURE behavior OF state_machine_spi_command IS
+  TYPE machine IS(ready,select_command,led_fetch,led_prepare,led_execute,wait_cycle_start_process  ,fifo_clear_state,fifo_prepare_write_state,fifo_process_write_state,fifo_write_state); --state machine datatype
+  SIGNAL state         : machine;                       --current state
+  SIGNAL	led_state_buffer  : STD_LOGIC_VECTOR(63 DOWNTO 0); -- state buff of helping wiring led 
+  SIGNAL command_cnt : INTEGER := 0;  --index of byte 
+  
+BEGIN
+
+	--led_state <= X"000000000000000" & "000" & n_spi_receive_data;
+
+
+  PROCESS(clk, reset_n) 
+  BEGIN
+    IF(  (reset_n = '0')   )  THEN  --reset asserted or SPI transaction is not used
+        command_cnt <=0; --reset command counter
+		led_state_buffer <= (others => '0');
+		led_state <= X"FF00FF00FF00FF00";
+		write_enable <= '0';  -- stop write 
+		data_out <= x"00"; --00 at reset 
+		fifo_clear <= '1'; --Clear memory at reset and release it in process
+		fifo_write_req <= '0';
+		state <= ready; 
+    elsif(rising_edge(CLK)) then 
+
+		
+	CASE state IS 
+	--------------------------------------Check  Command ---------------------------------------------------------	
+	WHEN ready =>  --First byte => command byte	
+	--led_state <= X"00FFFFFFFFFFFFFF";
+	write_enable <= '0';  -- stop write 	
+	data_out <= x"00"; --Force 0x00 when FSM is in Ready state
+	start_process_data_in_fifo <= '0';
+	fifo_clear <= '0';		
+		if ( data_in_valid ='1')  then
+			state <=  select_command;
+		else
+			state <=  ready;
+		end if;
+	
+	WHEN select_command => 
+		CASE data_in IS  --check first byte (command byte) 
+			WHEN X"50" => --Fill Fifo	
+				fifo_clear <= '1';
+				state <= fifo_clear_state;
+				data_out <= data_in;					
+			WHEN X"23" => --Wiring LED COMMAND
+				state <= led_fetch;
+				data_out <= data_in;
+			WHEN OTHERS => 
+				led_state <= X"00FFFFFFFFFFFF" & data_in ;
+				fifo_clear <= '1';
+				state <=  ready;  -- command not found go to idle state
+		END CASE;
+
+	-------------------------------------------END of Check  Command----------------------------------------------			
+		
+
+	-----------------------------------------Fill Fifo-----------------------------------------------------------
+		WHEN fifo_clear_state => --clear fifo
+			fifo_clear <= '0';		
+			state <=  fifo_prepare_write_state;
+			write_enable <= '1'; --answer the  first byte command (0x00) 
+		WHEN fifo_prepare_write_state =>		
+			write_enable <= '0'; --stop write
+			
+			--  Transmitting
+			if (n_spi_receive_data = '0') then 
+				if ( data_in_valid ='1')  then  --receive byte to write in fifo
+					data_out <= data_in; --answer the same thing
+					fifo_data_out<= data_in; -- and store it in fifo
+					state <=  fifo_process_write_state;	
+				else
+					state <= fifo_prepare_write_state; --Don't move
+				end if;
+			--End of SPI Transmission
+			else
+				start_process_data_in_fifo <= '1';	
+				state <= wait_cycle_start_process;
+			end if;
+		
+		 --To avoid glitch and to be sure process data begin minimum two cycle to indicate date is ready
+		WHEN wait_cycle_start_process  =>
+			state <= ready;
+				
+		
+		WHEN fifo_process_write_state =>		
+			write_enable <= '1'; --start write
+				
+			if fifo_full = '1' then --If fifo is full go to ready state / do nothing
+					state <=  ready;	
+			else  --if not full add the byte	
+				fifo_write_req<= '1';  --Allow write 
+				state <=  fifo_write_state;	
+			end if;
+
+		WHEN fifo_write_state =>				
+			fifo_write_req<= '0';  --Disable write 
+			write_enable <= '0'; --stop write answer to spi
+			if  fifo_full = '1' then  -- Fifo is full go to idle state
+				state <=  ready; 
+			else  --if not continous to fill memory
+				state <=  fifo_prepare_write_state;
+			end if;		
+	-----------------------------------END of  Fill Fifo----------------------------------------------------------
+	
+	
+	
+	
+	
+	------------------------------------------Wiring LED	-----------------------------------------------------------
+		WHEN led_fetch => --fetch command led 
+			write_enable <= '1'; --start write
+			--led command not requiere to do something to prepare the command ( prepare fifo, memory etc)
+			state <=  led_prepare;	
+			
+		WHEN led_prepare => 
+			write_enable <= '0'; --stop write operation
+			-- Receive the first byte of LED command
+			IF command_cnt  = 8 then
+					command_cnt <= 0;
+					led_state  <= led_state_buffer;  --receive last byte, now set the   64bits led state	
+					state <=  ready;  -- end of processing command,	
+			end if;		
+			
+			if ( data_in_valid ='1')  then
+				data_out <= data_in; --Prepare response 
+				--Some process if needed before exectute ( prepare memory etc)
+				--not use for LED command, go to the next step, execute
+				state <=  led_execute;
+			end if;			
+		WHEN led_execute =>			
+			write_enable <= '1'; --start write response
+			led_state_buffer <=   led_state_buffer(55 DOWNTO 0) & data_in;  --shift  left and add the new value	
+			command_cnt <= command_cnt + 1;
+			state <=  led_prepare;
+	-----------------------------------------END of Wiring LED-------------------------------------------------------
+	
+	
+	
+	
+		WHEN OTHERS =>  state <=  ready; -- state machine not found go to idle state
+      END CASE;
+    END IF;
+	 
+
+	 
+  END PROCESS;
+END behavior;

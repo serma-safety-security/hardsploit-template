@@ -1,0 +1,130 @@
+Flow report for Hardsploit_TEMPLATE
+Thu Feb 11 18:35:49 2016
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Flow Summary
+  3. Flow Settings
+  4. Flow Non-Default Global Settings
+  5. Flow Elapsed Time
+  6. Flow OS Summary
+  7. Flow Log
+  8. Flow Messages
+  9. Flow Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------+
+; Flow Summary                                                                         ;
++------------------------------------+-------------------------------------------------+
+; Flow Status                        ; Successful - Thu Feb 11 18:35:49 2016           ;
+; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
+; Revision Name                      ; Hardsploit_TEMPLATE                             ;
+; Top-level Entity Name              ; HARDSPLOIT_TEMPLATE                             ;
+; Family                             ; Cyclone II                                      ;
+; Device                             ; EP2C5T144C8                                     ;
+; Timing Models                      ; Final                                           ;
+; Total logic elements               ; 578 / 4,608 ( 13 % )                            ;
+;     Total combinational functions  ; 491 / 4,608 ( 11 % )                            ;
+;     Dedicated logic registers      ; 351 / 4,608 ( 8 % )                             ;
+; Total registers                    ; 351                                             ;
+; Total pins                         ; 79 / 89 ( 89 % )                                ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0 / 119,808 ( 0 % )                             ;
+; Embedded Multiplier 9-bit elements ; 0 / 26 ( 0 % )                                  ;
+; Total PLLs                         ; 1 / 2 ( 50 % )                                  ;
++------------------------------------+-------------------------------------------------+
+
+
++-----------------------------------------+
+; Flow Settings                           ;
++-------------------+---------------------+
+; Option            ; Setting             ;
++-------------------+---------------------+
+; Start date & time ; 02/11/2016 18:35:22 ;
+; Main task         ; Compilation         ;
+; Revision Name     ; Hardsploit_TEMPLATE ;
++-------------------+---------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                                          ;
++-------------------------------------+--------------------------------------------------------------+---------------+---------------------+----------------+
+; Assignment Name                     ; Value                                                        ; Default Value ; Entity Name         ; Section Id     ;
++-------------------------------------+--------------------------------------------------------------+---------------+---------------------+----------------+
+; COMPILER_SIGNATURE_ID               ; 1099213430220.145521212202980                                ; --            ; --                  ; --             ;
+; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                                                         ; --            ; --                  ; eda_simulation ;
+; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL)                                       ; <None>        ; --                  ; --             ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                                                           ; --            ; --                  ; --             ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                                                            ; --            ; --                  ; --             ;
+; PARTITION_COLOR                     ; 16764057                                                     ; --            ; HARDSPLOIT_TEMPLATE ; Top            ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING                                        ; --            ; HARDSPLOIT_TEMPLATE ; Top            ;
+; PARTITION_NETLIST_TYPE              ; SOURCE                                                       ; --            ; HARDSPLOIT_TEMPLATE ; Top            ;
+; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                                          ; --            ; --                  ; --             ;
+; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW                        ; --            ; --                  ; --             ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files                                                 ; --            ; --                  ; --             ;
+; SEARCH_PATH                         ; z:\seafile\git_opale\hardsploit-vhdl\hardsploit\sources\core ; --            ; --                  ; --             ;
++-------------------------------------+--------------------------------------------------------------+---------------+---------------------+----------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                             ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Synthesis      ; 00:00:05     ; 1.0                     ; 497 MB              ; 00:00:05                           ;
+; Fitter                    ; 00:00:09     ; 1.0                     ; 586 MB              ; 00:00:09                           ;
+; Assembler                 ; 00:00:02     ; 1.0                     ; 410 MB              ; 00:00:02                           ;
+; TimeQuest Timing Analyzer ; 00:00:03     ; 1.0                     ; 392 MB              ; 00:00:04                           ;
+; EDA Netlist Writer        ; 00:00:02     ; 1.0                     ; 371 MB              ; 00:00:02                           ;
+; Total                     ; 00:00:21     ; --                      ; --                  ; 00:00:22                           ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+
+
++----------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                        ;
++---------------------------+------------------+-----------+------------+----------------+
+; Module Name               ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
++---------------------------+------------------+-----------+------------+----------------+
+; Analysis & Synthesis      ; VM-DEV-JULIEN    ; Windows 7 ; 6.1        ; x86_64         ;
+; Fitter                    ; VM-DEV-JULIEN    ; Windows 7 ; 6.1        ; x86_64         ;
+; Assembler                 ; VM-DEV-JULIEN    ; Windows 7 ; 6.1        ; x86_64         ;
+; TimeQuest Timing Analyzer ; VM-DEV-JULIEN    ; Windows 7 ; 6.1        ; x86_64         ;
+; EDA Netlist Writer        ; VM-DEV-JULIEN    ; Windows 7 ; 6.1        ; x86_64         ;
++---------------------------+------------------+-----------+------------+----------------+
+
+
+------------
+; Flow Log ;
+------------
+quartus_map --read_settings_files=on --write_settings_files=off Hardsploit_TEMPLATE -c Hardsploit_TEMPLATE
+quartus_fit --read_settings_files=off --write_settings_files=off Hardsploit_TEMPLATE -c Hardsploit_TEMPLATE
+quartus_asm --read_settings_files=off --write_settings_files=off Hardsploit_TEMPLATE -c Hardsploit_TEMPLATE
+quartus_sta Hardsploit_TEMPLATE -c Hardsploit_TEMPLATE
+quartus_eda --read_settings_files=off --write_settings_files=off Hardsploit_TEMPLATE -c Hardsploit_TEMPLATE
+
+
+

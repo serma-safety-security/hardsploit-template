@@ -1,0 +1,85 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow Model Setup 'inst|altpll_component|pll|clk[0]'
+Slack : -7.094
+TNS   : -118.640
+
+Type  : Slow Model Setup 'SPI3_SCLK'
+Slack : -3.327
+TNS   : -51.079
+
+Type  : Slow Model Setup 'inst|altpll_component|pll|clk[1]'
+Slack : -2.772
+TNS   : -2.772
+
+Type  : Slow Model Hold 'SPI3_SCLK'
+Slack : -1.479
+TNS   : -8.214
+
+Type  : Slow Model Hold 'inst|altpll_component|pll|clk[0]'
+Slack : 0.499
+TNS   : 0.000
+
+Type  : Slow Model Hold 'inst|altpll_component|pll|clk[1]'
+Slack : 0.499
+TNS   : 0.000
+
+Type  : Slow Model Minimum Pulse Width 'SPI3_SCLK'
+Slack : -1.941
+TNS   : -37.557
+
+Type  : Slow Model Minimum Pulse Width 'inst|altpll_component|pll|clk[0]'
+Slack : 2.091
+TNS   : 0.000
+
+Type  : Slow Model Minimum Pulse Width 'CLK_50M'
+Slack : 10.000
+TNS   : 0.000
+
+Type  : Slow Model Minimum Pulse Width 'inst|altpll_component|pll|clk[1]'
+Slack : 23.758
+TNS   : 0.000
+
+Type  : Fast Model Setup 'inst|altpll_component|pll|clk[0]'
+Slack : -3.057
+TNS   : -53.992
+
+Type  : Fast Model Setup 'SPI3_SCLK'
+Slack : -0.480
+TNS   : -5.435
+
+Type  : Fast Model Setup 'inst|altpll_component|pll|clk[1]'
+Slack : 1.444
+TNS   : 0.000
+
+Type  : Fast Model Hold 'SPI3_SCLK'
+Slack : -1.192
+TNS   : -13.466
+
+Type  : Fast Model Hold 'inst|altpll_component|pll|clk[0]'
+Slack : 0.215
+TNS   : 0.000
+
+Type  : Fast Model Hold 'inst|altpll_component|pll|clk[1]'
+Slack : 0.215
+TNS   : 0.000
+
+Type  : Fast Model Minimum Pulse Width 'SPI3_SCLK'
+Slack : -1.380
+TNS   : -25.380
+
+Type  : Fast Model Minimum Pulse Width 'inst|altpll_component|pll|clk[0]'
+Slack : 2.333
+TNS   : 0.000
+
+Type  : Fast Model Minimum Pulse Width 'CLK_50M'
+Slack : 10.000
+TNS   : 0.000
+
+Type  : Fast Model Minimum Pulse Width 'inst|altpll_component|pll|clk[1]'
+Slack : 24.000
+TNS   : 0.000
+
+------------------------------------------------------------
