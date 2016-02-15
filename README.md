@@ -125,4 +125,4 @@ or
 ./HardsploitTemple.rb
 ```
 
-For any question about this template please feel free to contact us here: http://hardsploit.io/forums/forum/hardsploit-support/technical-questions/
+For any question about this template please feel free to contact us here: https://www.hardsploit.io/forums/forum/hardsploit-support/technical-questions/
