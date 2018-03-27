@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for Hardsploit_TEMPLATE
-Thu Feb 11 18:35:45 2016
+Wed Feb 21 13:10:35 2018
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -8,58 +8,57 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
 ---------------------
   1. Legal Notice
   2. TimeQuest Timing Analyzer Summary
-  3. Parallel Compilation
-  4. Clocks
-  5. Slow Model Fmax Summary
-  6. Slow Model Setup Summary
-  7. Slow Model Hold Summary
-  8. Slow Model Recovery Summary
-  9. Slow Model Removal Summary
- 10. Slow Model Minimum Pulse Width Summary
- 11. Slow Model Setup: 'inst|altpll_component|pll|clk[0]'
- 12. Slow Model Setup: 'SPI3_SCLK'
- 13. Slow Model Setup: 'inst|altpll_component|pll|clk[1]'
- 14. Slow Model Hold: 'SPI3_SCLK'
- 15. Slow Model Hold: 'inst|altpll_component|pll|clk[0]'
- 16. Slow Model Hold: 'inst|altpll_component|pll|clk[1]'
- 17. Slow Model Minimum Pulse Width: 'SPI3_SCLK'
- 18. Slow Model Minimum Pulse Width: 'inst|altpll_component|pll|clk[0]'
- 19. Slow Model Minimum Pulse Width: 'CLK_50M'
- 20. Slow Model Minimum Pulse Width: 'inst|altpll_component|pll|clk[1]'
- 21. Setup Times
- 22. Hold Times
- 23. Clock to Output Times
- 24. Minimum Clock to Output Times
- 25. Fast Model Setup Summary
- 26. Fast Model Hold Summary
- 27. Fast Model Recovery Summary
- 28. Fast Model Removal Summary
- 29. Fast Model Minimum Pulse Width Summary
- 30. Fast Model Setup: 'inst|altpll_component|pll|clk[0]'
- 31. Fast Model Setup: 'SPI3_SCLK'
- 32. Fast Model Setup: 'inst|altpll_component|pll|clk[1]'
- 33. Fast Model Hold: 'SPI3_SCLK'
- 34. Fast Model Hold: 'inst|altpll_component|pll|clk[0]'
- 35. Fast Model Hold: 'inst|altpll_component|pll|clk[1]'
- 36. Fast Model Minimum Pulse Width: 'SPI3_SCLK'
- 37. Fast Model Minimum Pulse Width: 'inst|altpll_component|pll|clk[0]'
- 38. Fast Model Minimum Pulse Width: 'CLK_50M'
- 39. Fast Model Minimum Pulse Width: 'inst|altpll_component|pll|clk[1]'
- 40. Setup Times
- 41. Hold Times
- 42. Clock to Output Times
- 43. Minimum Clock to Output Times
- 44. Multicorner Timing Analysis Summary
- 45. Setup Times
- 46. Hold Times
- 47. Clock to Output Times
- 48. Minimum Clock to Output Times
- 49. Setup Transfers
- 50. Hold Transfers
- 51. Report TCCS
- 52. Report RSKM
- 53. Unconstrained Paths
- 54. TimeQuest Timing Analyzer Messages
+  3. Clocks
+  4. Slow Model Fmax Summary
+  5. Slow Model Setup Summary
+  6. Slow Model Hold Summary
+  7. Slow Model Recovery Summary
+  8. Slow Model Removal Summary
+  9. Slow Model Minimum Pulse Width Summary
+ 10. Slow Model Setup: 'inst|altpll_component|pll|clk[0]'
+ 11. Slow Model Setup: 'SPI3_SCLK'
+ 12. Slow Model Setup: 'inst|altpll_component|pll|clk[1]'
+ 13. Slow Model Hold: 'SPI3_SCLK'
+ 14. Slow Model Hold: 'inst|altpll_component|pll|clk[0]'
+ 15. Slow Model Hold: 'inst|altpll_component|pll|clk[1]'
+ 16. Slow Model Minimum Pulse Width: 'SPI3_SCLK'
+ 17. Slow Model Minimum Pulse Width: 'inst|altpll_component|pll|clk[0]'
+ 18. Slow Model Minimum Pulse Width: 'CLK_50M'
+ 19. Slow Model Minimum Pulse Width: 'inst|altpll_component|pll|clk[1]'
+ 20. Setup Times
+ 21. Hold Times
+ 22. Clock to Output Times
+ 23. Minimum Clock to Output Times
+ 24. Fast Model Setup Summary
+ 25. Fast Model Hold Summary
+ 26. Fast Model Recovery Summary
+ 27. Fast Model Removal Summary
+ 28. Fast Model Minimum Pulse Width Summary
+ 29. Fast Model Setup: 'inst|altpll_component|pll|clk[0]'
+ 30. Fast Model Setup: 'SPI3_SCLK'
+ 31. Fast Model Setup: 'inst|altpll_component|pll|clk[1]'
+ 32. Fast Model Hold: 'SPI3_SCLK'
+ 33. Fast Model Hold: 'inst|altpll_component|pll|clk[0]'
+ 34. Fast Model Hold: 'inst|altpll_component|pll|clk[1]'
+ 35. Fast Model Minimum Pulse Width: 'SPI3_SCLK'
+ 36. Fast Model Minimum Pulse Width: 'inst|altpll_component|pll|clk[0]'
+ 37. Fast Model Minimum Pulse Width: 'CLK_50M'
+ 38. Fast Model Minimum Pulse Width: 'inst|altpll_component|pll|clk[1]'
+ 39. Setup Times
+ 40. Hold Times
+ 41. Clock to Output Times
+ 42. Minimum Clock to Output Times
+ 43. Multicorner Timing Analysis Summary
+ 44. Setup Times
+ 45. Hold Times
+ 46. Clock to Output Times
+ 47. Minimum Clock to Output Times
+ 48. Setup Transfers
+ 49. Hold Transfers
+ 50. Report TCCS
+ 51. Report RSKM
+ 52. Unconstrained Paths
+ 53. TimeQuest Timing Analyzer Messages
 
 
 
@@ -93,17 +92,6 @@ applicable agreement for further details.
 ; Delay Model        ; Combined                                                          ;
 ; Rise/Fall Delays   ; Unavailable                                                       ;
 +--------------------+-------------------------------------------------------------------+
-
-
-Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
-+-------------------------------------+
-; Parallel Compilation                ;
-+----------------------------+--------+
-; Processors                 ; Number ;
-+----------------------------+--------+
-; Number detected on machine ; 4      ;
-; Maximum allowed            ; 1      ;
-+----------------------------+--------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -2832,7 +2820,7 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Thu Feb 11 18:35:42 2016
+    Info: Processing started: Wed Feb 21 13:10:33 2018
 Info: Command: quartus_sta Hardsploit_TEMPLATE -c Hardsploit_TEMPLATE
 Info: qsta_default_script.tcl version: #1
 Warning (20028): Parallel compilation is not licensed and has been disabled
@@ -2900,9 +2888,9 @@ Info (332001): The selected device family is not supported by the report_metasta
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 392 megabytes
-    Info: Processing ended: Thu Feb 11 18:35:45 2016
-    Info: Elapsed time: 00:00:03
-    Info: Total CPU time (on all processors): 00:00:04
+    Info: Peak virtual memory: 451 megabytes
+    Info: Processing ended: Wed Feb 21 13:10:35 2018
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:01
 
 

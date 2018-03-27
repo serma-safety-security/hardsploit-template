@@ -16,7 +16,7 @@
 -- PROGRAM "Quartus II 64-Bit"
 -- VERSION "Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition"
 
--- DATE "02/11/2016 18:35:48"
+-- DATE "02/21/2018 13:10:36"
 
 -- 
 -- Device: Altera EP2C5T144C8 Package TQFP144
@@ -944,18 +944,18 @@ SIGNAL \command_spi_slave|tx_bit_reg~regout\ : std_logic;
 SIGNAL \command_spi_slave|preload_miso~feeder_combout\ : std_logic;
 SIGNAL \command_spi_slave|preload_miso~regout\ : std_logic;
 SIGNAL \command_spi_slave|spi_miso_o~0_combout\ : std_logic;
-SIGNAL \data_spi_master|state_reg\ : std_logic_vector(3 DOWNTO 0);
-SIGNAL \data_spi_master|sh_reg\ : std_logic_vector(7 DOWNTO 0);
-SIGNAL \data_spi_master|di_reg\ : std_logic_vector(7 DOWNTO 0);
-SIGNAL \LED|count\ : std_logic_vector(6 DOWNTO 0);
-SIGNAL \state_machine_spi_slave|data_out_master\ : std_logic_vector(7 DOWNTO 0);
-SIGNAL \command_spi_slave|di_reg\ : std_logic_vector(7 DOWNTO 0);
 SIGNAL \command_spi_slave|sh_reg\ : std_logic_vector(7 DOWNTO 0);
-SIGNAL \state_machine_spi_slave|command_cnt\ : std_logic_vector(31 DOWNTO 0);
 SIGNAL \command_spi_slave|do_buffer_reg\ : std_logic_vector(7 DOWNTO 0);
-SIGNAL \state_machine_spi_slave|data_out_slave\ : std_logic_vector(7 DOWNTO 0);
-SIGNAL \state_machine_spi_slave|led_state\ : std_logic_vector(63 DOWNTO 0);
+SIGNAL \command_spi_slave|di_reg\ : std_logic_vector(7 DOWNTO 0);
+SIGNAL \LED|count\ : std_logic_vector(6 DOWNTO 0);
+SIGNAL \data_spi_master|di_reg\ : std_logic_vector(7 DOWNTO 0);
 SIGNAL \state_machine_spi_slave|led_state_buffer\ : std_logic_vector(63 DOWNTO 0);
+SIGNAL \state_machine_spi_slave|led_state\ : std_logic_vector(63 DOWNTO 0);
+SIGNAL \state_machine_spi_slave|data_out_slave\ : std_logic_vector(7 DOWNTO 0);
+SIGNAL \state_machine_spi_slave|data_out_master\ : std_logic_vector(7 DOWNTO 0);
+SIGNAL \data_spi_master|sh_reg\ : std_logic_vector(7 DOWNTO 0);
+SIGNAL \data_spi_master|state_reg\ : std_logic_vector(3 DOWNTO 0);
+SIGNAL \state_machine_spi_slave|command_cnt\ : std_logic_vector(31 DOWNTO 0);
 SIGNAL \command_spi_slave|state_reg\ : std_logic_vector(3 DOWNTO 0);
 SIGNAL \ALT_INV_SPI3_SCLK~clkctrl_outclk\ : std_logic;
 SIGNAL \state_machine_spi_slave|ALT_INV_state.led_execute~regout\ : std_logic;
