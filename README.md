@@ -4,7 +4,12 @@
 Our purpose with this template is not to teach you how to code in VHDL. If you want to use it, you will need to have prior knowledge in this domain.
 
 ---
+### Testing information: 
+It is possible to get the current setup, up and running, without the need of any VHDL programming(steps 2,3 and 4). This solution will run as is for those who want to test the API calls (e.g., check HardsploitTemplate.rb).
 
+You should follow the whole flow, only if you are developing or furthering custom VHDL and Ruby (to support the VHDL modifications). 
+
+---
 ![component-cmd-spi-set](readme-pictures/hardsploit-template.png)
 
 ## 1. Clone the latest API & TEMPLATE repository from github
