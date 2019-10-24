@@ -11,8 +11,8 @@ Our purpose with this template is not to teach you how to code in VHDL. If you w
 ```bash
 mkdir template-project
 cd template-project
-git clone https://github.com/OPALESECURITY/hardsploit-template
-git clone https://github.com/OPALESECURITY/hardsploit-api
+git clone https://github.com/serma-safety-security/hardsploit-template
+git clone https://github.com/serma-safety-security/hardsploit-api
 ```
 ## 2. Download Quartus II V13.0sp1 Web edition
 
