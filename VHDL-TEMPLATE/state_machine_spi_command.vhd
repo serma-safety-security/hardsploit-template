@@ -190,10 +190,12 @@ ARCHITECTURE behavior OF state_machine_spi_command IS
 				if data_in_request_master = '1' then -- Request is assert
 					data_out_master <= hardsploit_bus1_read; --Copy value of input
 					state   <=  wait_request_read_wait1;
+					
 				end if;	
 		
 		WHEN wait_request_read_wait1 => --Loose 1 cycle to synchronise with spi
-				state <=  wait_request_read2;		
+				state <=  wait_request_read2;	
+			   --state   <=  wait_finish_template_state;	
 				
 		WHEN wait_request_read2 =>   --Wait to request read from spi
 				if data_in_request_master = '1' then -- Request is assert
@@ -215,7 +217,7 @@ ARCHITECTURE behavior OF state_machine_spi_command IS
 				
 		WHEN wait_request_read4 =>   --Wait to request read from spi
 				if data_in_request_master = '1' then -- Request is assert
-					data_out_master <=hardsploit_bus4_read; --Copy value of input
+					data_out_master <= hardsploit_bus4_read; --Copy value of input
 					state   <=  wait_request_read_wait4;
 				end if;		
 		
